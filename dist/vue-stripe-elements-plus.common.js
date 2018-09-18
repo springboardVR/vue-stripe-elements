@@ -296,7 +296,7 @@ component.options.__file = "StripeElement.vue"
     const vm = this
     return {
       _stripe: {
-        get create () { return vm._elements.create }
+        get create () { return vm.create }
       }
     }
   },
