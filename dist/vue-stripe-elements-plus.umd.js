@@ -120,8 +120,42 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
 var setPublicPath = __webpack_require__("1eb2");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/StripeElement.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
 
+  return obj;
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread.js
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+    var ownKeys = Object.keys(source);
+
+    if (typeof Object.getOwnPropertySymbols === 'function') {
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      _defineProperty(target, key, source[key]);
+    });
+  }
+
+  return target;
+}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/StripeElement.vue?vue&type=script&lang=js&
 /* harmony default export */ var StripeElementvue_type_script_lang_js_ = ({
   // please see https://stripe.com/docs/elements/reference for details
   inject: ['_stripe'],
@@ -134,38 +168,60 @@ var setPublicPath = __webpack_require__("1eb2");
       type: Object,
       required: false
     },
-    type: { type: String, required: true }
+    type: {
+      type: String,
+      required: true
+    }
   },
-  beforeMount () {
-    this._element = this._stripe.create(this.type, this.options)
-    this._element.on('blur', event => this.$emit('blur'))
-    this._element.on('focus', event => this.$emit('focus'))
-    this._element.on('change', event => this.$emit('change', event))
+  beforeMount: function beforeMount() {
+    var _this = this;
+
+    this._element = this._stripe.create(this.type, this.options);
+
+    this._element.on('blur', function (event) {
+      return _this.$emit('blur');
+    });
+
+    this._element.on('focus', function (event) {
+      return _this.$emit('focus');
+    });
+
+    this._element.on('change', function (event) {
+      return _this.$emit('change', event);
+    });
   },
-  render (h) {
-    return h('span')
+  render: function render(h) {
+    return h('span');
   },
-  mounted () {
+  mounted: function mounted() {
     // Vue likes to stay in control of $el but Stripe needs a real element
-    const el = document.createElement('div')
-    this._element.mount(el)
-    // this.$children cannot be used because it expects a VNode :(
-    this.$el.appendChild(el)
-  },
+    var el = document.createElement('div');
 
-  beforeDestroy () {
-    this._element.unmount()
-    this._element.destroy()
-  },
+    this._element.mount(el); // this.$children cannot be used because it expects a VNode :(
 
+
+    this.$el.appendChild(el);
+  },
+  beforeDestroy: function beforeDestroy() {
+    this._element.unmount();
+
+    this._element.destroy();
+  },
   methods: {
-    blur () { this._element.blur() },
-    clear () { this._element.clear() },
-    focus () { this._element.focus() },
-    update () { this._element.update() }
+    blur: function blur() {
+      this._element.blur();
+    },
+    clear: function clear() {
+      this._element.clear();
+    },
+    focus: function focus() {
+      this._element.focus();
+    },
+    update: function update() {
+      this._element.update();
+    }
   }
 });
-
 // CONCATENATED MODULE: ./src/StripeElement.vue?vue&type=script&lang=js&
  /* harmony default export */ var src_StripeElementvue_type_script_lang_js_ = (StripeElementvue_type_script_lang_js_); 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
@@ -264,7 +320,7 @@ function normalizeComponent (
 }
 
 // CONCATENATED MODULE: ./src/StripeElement.vue
-var render, staticRenderFns
+var StripeElement_render, staticRenderFns
 
 
 
@@ -273,7 +329,7 @@ var render, staticRenderFns
 
 var component = normalizeComponent(
   src_StripeElementvue_type_script_lang_js_,
-  render,
+  StripeElement_render,
   staticRenderFns,
   false,
   null,
@@ -284,55 +340,63 @@ var component = normalizeComponent(
 
 component.options.__file = "StripeElement.vue"
 /* harmony default export */ var StripeElement = (component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/StripeWrapper.vue?vue&type=script&lang=js&
-
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/StripeWrapper.vue?vue&type=script&lang=js&
 /* harmony default export */ var StripeWrappervue_type_script_lang_js_ = ({
   props: {
     stripeKey: {
       required: true
     },
-    options: {
-
-    }
+    options: {}
   },
-  render (h) {
-    return h('div', this.$slots.default)
+  render: function render(h) {
+    return h('div', this.$slots.default);
   },
-  created () {
-    this.init(this.stripeKey, this.options)
+  created: function created() {
+    this.init(this.stripeKey, this.options);
   },
-  provide () {
-    const vm = this
+  provide: function provide() {
+    var vm = this;
     return {
       _stripe: {
-        get create () { return vm.create }
+        get create() {
+          return vm.create;
+        }
+
       }
-    }
+    };
   },
   methods: {
-    createToken (options) { return this._instance && this._instance.createToken(this._element, options) },
-    createSource (options) { return this._instance && this._instance.createSource(this._element, options) },
-    retrieveSource (options) { return this._instance && this._instance.retrieveSource(options) },
-    init (stripeKey, options = {}) {
+    createToken: function createToken(options) {
+      return this._instance && this._instance.createToken(this._element, options);
+    },
+    createSource: function createSource(options) {
+      return this._instance && this._instance.createSource(this._element, options);
+    },
+    retrieveSource: function retrieveSource(options) {
+      return this._instance && this._instance.retrieveSource(options);
+    },
+    init: function init(stripeKey) {
+      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
       if (window.Stripe === undefined && this._instance === null) {
-        console.error('Stripe V3 library not loaded!')
+        console.error('Stripe V3 library not loaded!');
       } else if (!this._instance) {
-        this._instance = window.Stripe(stripeKey)
+        this._instance = window.Stripe(stripeKey);
       }
 
       if (!this._instance.elements) {
-        console.error('Stripe V3 library not loaded!')
+        console.error('Stripe V3 library not loaded!');
       } else if (!this._elements) {
-        this._elements = this._instance.elements(options)
+        this._elements = this._instance.elements(options);
       }
     },
-    create (elementType, options = {}) {
-      this._element = this._elements.create(elementType, options)
-      return this._element
+    create: function create(elementType) {
+      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      this._element = this._elements.create(elementType, options);
+      return this._element;
     }
   }
 });
-
 // CONCATENATED MODULE: ./src/StripeWrapper.vue?vue&type=script&lang=js&
  /* harmony default export */ var src_StripeWrappervue_type_script_lang_js_ = (StripeWrappervue_type_script_lang_js_); 
 // CONCATENATED MODULE: ./src/StripeWrapper.vue
@@ -359,27 +423,27 @@ StripeWrapper_component.options.__file = "StripeWrapper.vue"
 // CONCATENATED MODULE: ./src/index.js
 
 
-const createHOC = (type) => ({
-  functional: true,
-  render (h, ctx) {
-    return h(StripeElement, {
-      ...ctx.data,
-      props: {
-        ...ctx.props,
-        type
-      }
-    })
-  }
-})
+
+var src_createHOC = function createHOC(type) {
+  return {
+    functional: true,
+    render: function render(h, ctx) {
+      return h(StripeElement, _objectSpread({}, ctx.data, {
+        props: _objectSpread({}, ctx.props, {
+          type: type
+        })
+      }));
+    }
+  };
+};
 
 
 
-const Card = createHOC('card')
-const CardExpiry = createHOC('cardExpiry')
-const CardCvc = createHOC('cardCvc')
-const CardNumber = createHOC('cardNumber')
-const PostalCode = createHOC('postalCode')
-
+var Card = src_createHOC('card');
+var CardExpiry = src_createHOC('cardExpiry');
+var CardCvc = src_createHOC('cardCvc');
+var CardNumber = src_createHOC('cardNumber');
+var PostalCode = src_createHOC('postalCode');
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib-no-default.js
 /* concated harmony reexport StripeWrapper */__webpack_require__.d(__webpack_exports__, "StripeWrapper", function() { return StripeWrapper; });
 /* concated harmony reexport StripeElement */__webpack_require__.d(__webpack_exports__, "StripeElement", function() { return StripeElement; });

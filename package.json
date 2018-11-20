@@ -1,22 +1,22 @@
 {
   "name": "vue-stripe-elements-plus",
   "version": "0.2.10",
-  "description": "Stripe Elements components for Vue",
-  "main": "./dist/vue-stripe-elements-plus.common.js",
   "scripts": {
     "build": "vue-cli-service build src/index.js --target lib",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@vue/babel-preset-app": "^3.1.1",
+    "@vue/cli-plugin-babel": "^3.1.1",
+    "@vue/cli-service": "^3.0.3",
+    "vue-template-compiler": "^2.5.17"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fromatob/vue-stripe-elements.git"
   },
-  "keywords": [
-    "vue",
-    "stripe",
-    "elements",
-    "payment"
-  ],
+  "main": "./dist/vue-stripe-elements-plus.common.js",
   "author": {
     "name": "fromAtoB GmbH",
     "url": "https://fromatob.com"
@@ -26,9 +26,11 @@
     "url": "https://github.com/fromatob/vue-stripe-elements/issues"
   },
   "homepage": "https://github.com/fromatob/vue-stripe-elements#readme",
-  "dependencies": {},
-  "devDependencies": {
-    "@vue/cli-service": "^3.0.3",
-    "vue-template-compiler": "^2.5.17"
-  }
+  "description": "Stripe Elements components for Vue",
+  "keywords": [
+    "vue",
+    "stripe",
+    "elements",
+    "payment"
+  ]
 }
